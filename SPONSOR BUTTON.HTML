@@ -21,7 +21,7 @@ nav a:hover { color:#3498db; }
 #hero p { font-size:20px; margin:20px 0 0 0; animation: fadeInUp 1s ease forwards; opacity:0; animation-delay:0.3s; }
 
 /* Sections */
-section { padding:20px; border-radius:8px; margin:20px auto; box-shadow:0 2px 12px rgba(0,0,0,0.1); opacity:0; transform:translateY(20px) scale(0.98); transition: all 0.6s ease; max-width:900px; background:white; display:none; }
+section { padding:20px; border-radius:8px; margin:20px auto; box-shadow:0 2px 12px rgba(0,0,0,0.1); opacity:0; transform:translateY(20px) scale(0.98); transition: all 0.6s ease; max-width:900px; background:#fff; }
 section.active { display:block; opacity:1; transform:translateY(0) scale(1); }
 
 /* Service Section Colors & Hover Gradient */
@@ -53,7 +53,7 @@ button:hover { opacity:0.9; transform:scale(1.05); box-shadow:0 4px 12px rgba(0,
 input, textarea { padding:10px; width:100%; max-width:400px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px; font-size:14px; }
 
 /* Popup Contact Form */
-#popupForm { position:fixed; top:50%; left:50%; transform:translate(-50%, -50%) scale(0); background:white; padding:30px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.3); z-index:300; transition:0.3s; max-width:400px; width:90%; opacity:0; }
+#popupForm { position:fixed; top:50%; left:50%; transform:translate(-50%, -50%) scale(0); background:white; padding:30px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.3); z-index:300; transition: all 0.3s ease; opacity:0; }
 #popupForm.active { transform:translate(-50%, -50%) scale(1); opacity:1; }
 #popupForm h3 { margin-top:0; }
 #popupForm button.close-btn { background:red; margin-top:10px; }
@@ -72,7 +72,7 @@ h2::before { margin-right:10px; }
 
 /* Floating Social Icons */
 .social-float { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:200; }
-.social-float a { display:block; width:50px; height:50px; border-radius:50%; color:white; text-align:center; line-height:50px; font-size:24px; box-shadow:0 2px 8px rgba(0,0,0,0.2); transition:0.3s; cursor:pointer; }
+.social-float a { display:block; width:50px; height:50px; border-radius:50%; color:white; text-align:center; line-height:50px; font-size:24px; box-shadow:0 2px 8px rgba(0,0,0,0.2); transition:0.3s; }
 .social-float a:hover { transform:scale(1.1); filter: brightness(1.2); }
 
 /* Animations */
@@ -85,6 +85,37 @@ h2::before { margin-right:10px; }
   nav a { display:block; margin:8px 0; }
   #hero h2 { font-size:36px; }
   #hero p { font-size:16px; }
+}
+
+/* Sponsor Button Animation */
+.sponsor-btn-animated {
+  display: inline-block;
+  background: #FFDD00;
+  color: #111;
+  font-weight: bold;
+  font-size: 1.15em;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 14px;
+  animation: heartbeat 1.6s infinite;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.3s, color 0.3s;
+}
+.sponsor-btn-animated:hover {
+  background: #ffe066;
+  color: #c92c6c;
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  10% { transform: scale(1.075); }
+  20% { transform: scale(0.95); }
+  30% { transform: scale(1.05); }
+  40% { transform: scale(0.97); }
+  50% { transform: scale(1.04); }
+  60% { transform: scale(0.98); }
+  70% { transform: scale(1.03); }
+  80% { transform: scale(1); }
 }
 </style>
 </head>
@@ -153,9 +184,12 @@ h2::before { margin-right:10px; }
 <p>WhatsApp: <a href="https://wa.me/255754620791" target="_blank">Click hapa</a></p>
 <p>Instagram: <a href="https://instagram.com/yourprofile" target="_blank">dutch_afrikid</a></p>
 
-<!-- Sponsor Button -->
-<a href="https://www.buymeacoffee.com/username" target="_blank">
-<button class="sponsor-btn">Sponsor Me ☕</button>
+<!-- Sponsor Button (improved version) -->
+<a href="https://www.buymeacoffee.com/DUTCHAFRIKID" 
+   target="_blank" 
+   class="sponsor-btn-animated" 
+   aria-label="Sponsor DUTCH AFRIKID on BuyMeACoffee">
+  ☕ Support DUTCH AFRIKID
 </a>
 </section>
 
@@ -169,7 +203,7 @@ h2::before { margin-right:10px; }
 <a onclick="openPopup('Email')" title="Email">✉️</a>
 <a onclick="openPopup('Call')" title="Call">📞</a>
 <a onclick="openPopup('Instagram')" title="Instagram">📸</a>
-<a href="https://www.buymeacoffee.com/username" target="_blank" title="Sponsor Me">☕</a>
+<a href="https://www.buymeacoffee.com/DUTCHAFRIKID" target="_blank" title="Sponsor DUTCH AFRIKID">☕</a>
 </div>
 
 <!-- Popup Contact Form -->
